@@ -1,0 +1,9 @@
+# I have no idea about the project above me.
+# I'm just a simple collection of names that start with A and B.
+
+genrule(
+    name='all',
+    srcs=['a.names', 'b.names'],
+    out='all.names',
+    cmd='$(exe //ext/compiler:compiler) $SRCS > $OUT',
+    visibility=['PUBLIC'])

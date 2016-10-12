@@ -1,0 +1,13 @@
+# I have no idea about the two projects above me;
+# I just supply a script that 'compiles (concatenates)
+# all the files that are passed to me and prints them out to stdout.
+
+# also, we have to use a genrule() here instead of export_file()
+# because exported files can't be marked as executable :|
+genrule(
+	name='compiler',
+	srcs=['compiler.sh'],
+	out='compiler.sh',
+	cmd='cp $SRCS $OUT',
+	executable=True,
+	visibility=['PUBLIC'])
